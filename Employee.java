@@ -1,37 +1,45 @@
-package exercise2;
+package com.cg.eis.bean;
 
-import java.util.Scanner;
-class MyException extends Exception{
-	private String msg;
-	public MyException(String msg) {
-		this.msg=msg;
+public class Employee {
+	public String id;
+	public String name;
+	public double salary;
+	public String designation;
+	public String insurancescheme;
+	public String getId() {
+		return id;
 	}
-	public String toString()
-	{
-		return msg;
+	public void setId(String id) {
+		this.id = id;
 	}
-}
-public class Employee  {
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	public String getDesignation() {
+		return designation;
+	}
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+	public String getInsurancescheme() {
+		return insurancescheme;
+	}
+	public void setInsurancescheme(String insurancescheme) {
+		this.insurancescheme = insurancescheme;
+	}
 	
 	
-		public static void main(String args[])
-		{
-		Scanner scan=new Scanner(System.in);
-		System.out.println("Enter first name:");
-		 String firstname=scan.nextLine();
-		 System.out.println("Enter last name:");
-		 String lastname=scan.nextLine();
-		try {
-			if(firstname.length()==0 || lastname.length()==0) 
-			{
-				throw new MyException("Invalid name");
-			}
-			else
-				System.out.println("Name="+firstname+"\t"+lastname);
-				System.out.println("valid name");
-		}
-		catch(MyException a) {
-			System.out.println(a);
-		}
-		}
 }
+
+
+
+

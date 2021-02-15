@@ -1,33 +1,31 @@
-package org;
+package exercise4;
+import java.util.Scanner;
 import java.util.*;
+import java.lang.*;
 public class Difference {
-	int i;
-	int sum=0;
-	int j;
-	int sum1;
-	public int calculateDifference() {
-		Scanner scan= new Scanner(System.in);
-		int n= scan.nextInt();
-	
-		for(int i=1;i<=n;i++)
+	public static void modifyNumber(String s) {
+		StringBuffer sb = new StringBuffer();
+		for(int i=0;i<(s.length());i++) 
 		{
-			
-			sum=sum+i*i;
-			
+			if(i!=s.length()-1) {
+			char s1=s.charAt(i);
+			char s2=s.charAt(i+1);
+			int a1=Integer.parseInt(String.valueOf(s1));
+			int a2=Integer.parseInt(String.valueOf(s2));
+			sb.append(Math.abs(a1-a2));
 		}
-			System.out.println("sum of sqaures is:" +sum);
-			for(int j=0;j<=n;j++) {
-				sum1=sum1+j;
-			}
-		int c= sum1*sum1;
-		System.out.println("square of sum is:" +c);
-		int difference=c-sum;
-		System.out.println("difference is" +difference);
-		return n;
-	}
-	public static void main(String args[])
-	{
-		Difference s= new Difference();
-		s.calculateDifference();
+			else
+				sb.append(s.charAt(i));
 		}
+		System.out.println(sb.toString());
+		}
+		public static void main(String[] args) 
+		{
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter the Number");
+			int n=sc.nextInt();
+			String s=String.valueOf(n);
+			modifyNumber(s);
+		}
+
 }
